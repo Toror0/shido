@@ -1,0 +1,15 @@
+# APS（Physical Review 誌）の共通の決まり
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25）
+# 公式ページ（style-basics）が 404 で原文を確かめられなかったので、値はすべて未確認。
+# 参考（agy の要約。確かめたら値として書き、unverified から外す）：
+#   1 段 86 mm、高さの決まりなし、Helvetica/Arial/Times、大文字・数字の高さ 2 mm 以上（約 8 pt）、
+#   線 0.18 mm (0.5 pt)、ラスタ線画 600 dpi、PS/EPS/PDF/JPEG/PNG、RGB、パネル記号 (a)
+name: APS（共通）
+publisher: American Physical Society
+sources:
+  - url: https://journals.aps.org/style-basics
+    checked: 2026-11-25
+    note: 2026-11-25 に 404。値は未確認
+unverified: [width_mm.single, width_mm.one_half, width_mm.double, max_height_mm, fonts, text_pt.body,
+             text_pt.min, min_line_pt, dpi.line, dpi.photo, dpi.combination, formats, color_mode,
+             panel_label.style, panel_label.bold, panel_label.size_pt]

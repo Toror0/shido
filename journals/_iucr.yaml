@@ -1,0 +1,15 @@
+# IUCr（J. Appl. Cryst.・Acta Cryst.）の共通の決まり
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25）
+# 公式ページが自動取得を 403 で拒否し原文を確かめられなかったので、値はすべて未確認。
+# 参考（agy の要約。確かめたら値として書き、unverified から外す）：
+#   幅 88.5 / 120 / 180 mm、Arial/Helvetica/Times/Courier/Symbol、約 8 pt（文字の高さ 1.5–3 mm）、
+#   線 0.35–1.5 pt、白黒・灰色 600 dpi・カラー 400 dpi、EPS/PS/HPGL/TIFF/PNG、パネル記号 (a) 立体 約 8 pt
+name: IUCr（共通）
+publisher: International Union of Crystallography
+sources:
+  - url: https://journals.iucr.org/services/help/artwork/guide.html
+    checked: 2026-11-25
+    note: 2026-11-25 に自動取得を 403 で拒否。値は未確認
+unverified: [width_mm.single, width_mm.one_half, width_mm.double, max_height_mm, fonts, text_pt.body,
+             text_pt.min, min_line_pt, dpi.line, dpi.photo, dpi.combination, formats, color_mode,
+             panel_label.style, panel_label.bold, panel_label.size_pt]

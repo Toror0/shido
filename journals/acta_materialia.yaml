@@ -1,0 +1,3 @@
+name: Acta Materialia
+extends: _elsevier
+aliases: ["acta_mater", "Acta Mater."]

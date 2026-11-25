@@ -1,0 +1,3 @@
+name: 日本金属学会誌
+extends: _jim
+aliases: ["J. Japan Inst. Met. Mater."]

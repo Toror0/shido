@@ -1,0 +1,23 @@
+# AIP Publishing の共通の決まり（APL などの「その他の雑誌」の共通規定）
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25）
+# 原文 https://pubs.aip.org/pages/author-instructions で確かめた
+name: AIP Publishing（共通）
+publisher: AIP Publishing
+width_mm: {single: 85, double: 170}   # 3.37 in (8.5 cm) / 6.69 in (17 cm)
+max_height_mm: 211                    # 8 1/4 in (21.1 cm)
+text_pt: {min: 8}                     # a minimum of 8-point type size
+min_line_pt: 0.5                      # A minimum of 0.5-point width for lines
+dpi: {line: 600, photo: 300, combination: 600}   # 線画 600・カラー 300・組み合わせ 600（白黒ハーフトーンは 264）
+formats: [svg, eps, ps, tiff, pdf, jpeg, png]
+color_mode: RGB
+panel_label: {style: "(a)"}           # Identify all figure parts with (a), (b), etc.
+sources:
+  - url: https://pubs.aip.org/pages/author-instructions
+    checked: 2026-11-25
+    note: 原文で確認（APL を含む共通規定）
+unverified:
+  - width_mm.one_half
+  - fonts
+  - text_pt.body
+  - panel_label.bold
+  - panel_label.size_pt

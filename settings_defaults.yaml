@@ -1,0 +1,119 @@
+# 前提数値の既定値（よく使う数値）。
+# GUI の「前提数値」タブで変えた値は settings_user.yaml に保存され、こちらは書き換えない。
+# 長さは Å、角度は度。
+
+# ---- 格子定数・構造 ----------------------------------------------------
+lattice:
+  material: Ni2MnGa          # 下の material_presets の name。デモ構造に使う
+  a_austenite: 5.825         # 母相（L2_1 立方晶）の格子定数 a [Å]
+  martensite_c_over_a: 1.25  # マルテンサイト（L1_0 正方晶）の c/a
+  heusler_a: 6.00            # ホイスラー副格子モデルの格子定数 a [Å]
+
+# よく使う材料の格子定数（室温付近・文献の代表値。Webster & Ziebeck, Landolt-Börnstein III/19c ほか）。lattice.material で選ぶ
+material_presets:
+  - {name: Ni2MnGa, a: 5.825, structure: L21, note: "強磁性形状記憶合金。マルテンサイト c/a ≈ 1.2"}
+  - {name: Ni2MnIn, a: 6.068, structure: L21, note: "メタ磁性形状記憶合金の母体"}
+  - {name: Ni2MnSn, a: 6.053, structure: L21, note: ""}
+  - {name: Ni2MnSb, a: 6.003, structure: L21, note: ""}
+  - {name: Ni2MnAl, a: 5.825, structure: L21, note: ""}
+  - {name: Co2MnSi, a: 5.654, structure: L21, note: "ハーフメタル"}
+  - {name: Co2MnGe, a: 5.743, structure: L21, note: "ハーフメタル"}
+  - {name: Co2FeSi, a: 5.64,  structure: L21, note: ""}
+  - {name: Cu2MnAl, a: 5.949, structure: L21, note: ""}
+  - {name: Ni2FeGa, a: 5.745, structure: L21, note: "強磁性形状記憶合金（Liu, APL 2003）"}
+  - {name: Co2MnGa, a: 5.770, structure: L21, note: "ワイル半金属（Webster, JPCS 1971）"}
+  - {name: Mn2NiGa, a: 5.907, structure: XA,  note: "逆ホイスラー（Liu, APL 2005）。副格子の並びが L2_1 と違う"}
+  - {name: Fe3Al,   a: 5.792, structure: D03, note: ""}
+
+# ---- c/a スイープ（DFT 入力づくり） -------------------------------------
+ca_sweep:
+  ca_min: 0.85
+  ca_max: 1.35
+  ca_step: 0.02
+  energy_unit: meV/atom      # 図の縦軸。原子数が分からないときは meV/cell と表示する
+
+# ---- スラブ（表面の切り出し） -------------------------------------------
+slab:
+  min_slab_size: 10.0        # スラブの最小の厚さ [Å]
+  min_vacuum_size: 10.0      # 真空層の厚さ [Å]
+  layer_z_tol: 0.35          # 同じ原子層とみなす高さの差 [Å]
+  filter_polar: true         # 極性面を自動で除く
+  deduplicate: true          # 同じ形のスラブを1つにまとめる
+  polar_dipole_tol: 0.001    # 極性面とみなす双極子（面積あたり）[e/Å]。pymatgen と同じ値
+
+# ---- 変態前後の2相比較 ------------------------------------------------------
+phase_compare:
+  match_ltol: 0.35           # 格子の対応づけの許容差（長さの比）
+  match_stol: 0.6            # 原子位置の許容差
+  match_angle_tol: 10.0      # 角度の許容差 [度]
+
+# ---- ホイスラー副格子モデル ----------------------------------------------
+heusler:
+  formula: Ni50Mn35In15
+  ordering: L21              # L21 または B2（XA＝逆ホイスラー・規則のみ も可）
+  supercell: [2, 2, 2]
+  num_patterns: 3
+  highlight_pair: [Mn, Mn]
+  pair_cutoff_factor: 0.75   # ペア距離を数える範囲 = この値 × a
+  seed: 42
+
+# ---- 粉末X線回折（XRD）パターン ---------------------------------------------
+xrd:
+  wavelength: CuKa           # 線源。CuKa / MoKa / CoKa / FeKa / CrKa / AgKa（Kα1・Kα2 は CuKa1 など）
+  two_theta_min: 10.0        # 2θ の範囲の下限 [度]
+  two_theta_max: 90.0        # 2θ の範囲の上限 [度]
+  label_top_n: 8             # 図で hkl のラベルを付ける強いピークの数
+
+# ---- 結合（隣の原子との距離） ---------------------------------------------
+bonds:
+  max_bond_length: 3.2       # これより長い組は結合線を描かない [Å]
+
+# ---- 図の見た目 ------------------------------------------------------------
+render:
+  dpi: 300                   # PNG の解像度
+  ball_radius_scale: 0.40    # 原子の球の大きさ = 原子半径 × この値
+  ball_radius_min: 0.16      # 球の半径の下限 [Å]
+  ball_radius_max: 1.25      # 球の半径の上限 [Å]
+  bond_radius: 0.075         # 結合の棒の太さ（半径） [Å]
+  unit_cell_line_radius: 0.018  # 単位格子の線の太さ（半径） [Å]
+  transparent_background: false
+  theme: acta_modern         # themes.yaml のテーマ名
+
+# ---- 表示用の原子半径 [Å] ----------------------------------------------------
+# 球の大きさの元になる。既定は共有結合半径（Cordero et al., Dalton Trans. 2008）。
+# GUI のボタンで金属結合半径（12配位）に入れ替えられる。表に無い元素は pymatgen の値を使う。
+radius_source: covalent      # covalent / metallic / custom（表を手で直したら custom）
+atomic_radii:
+  H: 0.31
+  B: 0.84
+  C: 0.76
+  N: 0.71
+  O: 0.66
+  Mg: 1.41
+  Al: 1.21
+  Si: 1.11
+  Ti: 1.60
+  V: 1.53
+  Cr: 1.39
+  Mn: 1.39
+  Fe: 1.32
+  Co: 1.26
+  Ni: 1.24
+  Cu: 1.32
+  Zn: 1.22
+  Ga: 1.22
+  Ge: 1.20
+  Pd: 1.39
+  Ag: 1.45
+  In: 1.42
+  Sn: 1.39
+  Sb: 1.39
+  Pt: 1.36
+  Au: 1.36
+
+# ボタンで入れ替えるときの元の表（ここも既定値。普段は触らない）
+radius_tables:
+  covalent: {H: 0.31, B: 0.84, C: 0.76, N: 0.71, O: 0.66, Mg: 1.41, Al: 1.21, Si: 1.11, Ti: 1.60, V: 1.53, Cr: 1.39, Mn: 1.39, Fe: 1.32, Co: 1.26, Ni: 1.24, Cu: 1.32, Zn: 1.22, Ga: 1.22, Ge: 1.20, Pd: 1.39, Ag: 1.45, In: 1.42, Sn: 1.39, Sb: 1.39, Pt: 1.36, Au: 1.36}
+  # 金属結合半径（12配位）Greenwood & Earnshaw 1997 / Wells 1984。pymatgen の metallic_radius と一致を確認。
+  # 非金属（H B C N O）は値が無いので、ボタンを押しても今の値のまま
+  metallic: {Mg: 1.60, Al: 1.43, Si: 1.32, Ti: 1.47, V: 1.34, Cr: 1.28, Mn: 1.27, Fe: 1.26, Co: 1.25, Ni: 1.24, Cu: 1.28, Zn: 1.34, Ga: 1.35, Ge: 1.37, Pd: 1.37, Ag: 1.44, In: 1.67, Sn: 1.58, Sb: 1.59, Pt: 1.39, Au: 1.44}

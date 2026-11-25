@@ -1,0 +1,3 @@
+# .bat は Windows の改行（CRLF）でないとジャンプが壊れる
+*.bat text eol=crlf
+*.vbs text eol=crlf

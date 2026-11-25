@@ -1,0 +1,4 @@
+﻿# テストと配布用バイナリのビルドに必要な開発用パッケージ
+-r requirements.txt
+pytest>=8
+pyinstaller>=6

@@ -1,0 +1,29 @@
+# 日本金属学会（Materials Transactions・日本金属学会誌）の共通の決まり。ほとんど未確認
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25、公式ページ）
+name: 日本金属学会（共通）
+publisher: 日本金属学会
+formats: [office, ai, jpeg, tiff, png, gif, pdf]   # PDF はフォントをすべて埋め込む
+notes: >-
+  幅は表の決まりからの目安（1 段 70–80 mm・2 段 100–130 mm）しか分からない。
+  最終版は高い解像度で、ダウンサンプルしない。パネル記号は著者が図の中に入れる。
+sources:
+  - url: https://jimm.jp/publication/jimm/toko.html
+    checked: 2026-11-25
+  - url: https://jimm.jp/publication/jimm/pdf/jimm_tebiki.pdf
+    checked: 2026-11-25
+unverified:
+  - width_mm.single
+  - width_mm.one_half
+  - width_mm.double
+  - max_height_mm
+  - fonts
+  - text_pt.body
+  - text_pt.min
+  - min_line_pt
+  - dpi.line
+  - dpi.photo
+  - dpi.combination
+  - color_mode
+  - panel_label.style
+  - panel_label.bold
+  - panel_label.size_pt

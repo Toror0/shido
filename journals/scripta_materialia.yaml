@@ -1,0 +1,3 @@
+name: Scripta Materialia
+extends: _elsevier
+aliases: ["scripta_mater", "Scripta Mater."]

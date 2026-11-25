@@ -1,0 +1,6 @@
+name: Inorganic Chemistry
+extends: _acs
+aliases: ["Inorg. Chem."]
+sources:
+  - url: https://pubs.acs.org/journal/inocaj
+    checked: 2026-11-25

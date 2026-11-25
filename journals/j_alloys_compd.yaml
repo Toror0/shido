@@ -1,0 +1,3 @@
+name: Journal of Alloys and Compounds
+extends: _elsevier
+aliases: ["jalcom", "J. Alloys Compd."]

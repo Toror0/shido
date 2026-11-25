@@ -1,0 +1,3 @@
+name: Physical Review Materials
+extends: _aps
+aliases: ["phys_rev_mater", "Phys. Rev. Mater."]

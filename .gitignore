@@ -1,0 +1,19 @@
+output_*/
+*.png
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+# GUI で変えた前提数値（このPCだけ）
+settings_user.yaml
+
+# テストの一時ファイル・ビルド成果物
+.pytest_cache/
+build/
+dist/
+*.spec
+
+# 実行結果（実行ごとに 出力/<日時>_<名前>/ ができる）
+出力/
+資料/画像/work/

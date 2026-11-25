@@ -1,0 +1,22 @@
+# Springer Nature（Nature・Nat. Commun.・npj Comput. Mater.）の共通の決まり
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25）
+# 段の幅・高さ・文字・パネル記号・色は nature-final-artwork.pdf の原文で確かめた
+name: Springer Nature（共通）
+publisher: Springer Nature
+width_mm: {single: 89, one_half: 120, double: 183}   # 1.5 段は「120 mm or 136 mm」（狭いほうを入れた）
+max_height_mm: 247                                   # The full depth of the page is 247
+fonts: [Helvetica, Arial]                            # sans-serif, preferably Helvetica or Arial
+text_pt: {body: 7, min: 5}                           # 最大 7 pt・最小 5 pt
+min_line_pt: 0.3                                     # 0.1 mm（約 0.28 pt）
+dpi: {line: 1000, photo: 300, combination: 500}      # 組み合わせは 500–600
+formats: [eps, pdf, ai, tiff, jpeg]                  # 編集できるベクターを推奨
+color_mode: RGB                                      # RGB を推奨
+panel_label: {style: "a", bold: true, size_pt: 8}    # 8 pt bold, upright a, b, c
+sources:
+  - url: https://www.nature.com/documents/nature-final-artwork.pdf
+    checked: 2026-11-25
+    note: 原文（1 ページ）で幅・高さ・文字・パネル記号・色を確認
+  - url: https://www.nature.com/nature/for-authors/formatting-guide
+    checked: 2026-11-25
+    note: 線の太さ・dpi・形式
+unverified: []

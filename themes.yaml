@@ -1,0 +1,176 @@
+default_theme: "acta_modern"
+
+themes:
+  acta_modern:
+    description: "Acta Materialia等の最新論文向け（彩度を抑えた洗練配色）"
+    background: "#FFFFFF"
+    unit_cell: "#2B2D42"
+    subcell_highlight: "#D90429"
+    bond: "#B8C0CC"
+    silhouette: "#1F2421"
+    axes:
+      a: "#E63946"
+      b: "#2A9D8F"
+      c: "#264653"
+    elements:
+      Ni: "#52B788"
+      Mn: "#9B5DE5"
+      Ga: "#F4A261"
+      In: "#A06CD5"
+      Sn: "#6C757D"
+      Sb: "#6C757D"
+      Fe: "#E07A5F"
+      Co: "#3A86FF"
+      Ti: "#8D99AE"
+      Al: "#90E0EF"
+      Cu: "#D4A373"
+      O:  "#E63946"
+      N:  "#457B9D"
+      C:  "#495057"
+    fallback_order:
+      - "#2A9D8F"
+      - "#E9C46A"
+      - "#F4A261"
+      - "#E76F51"
+      - "#8D99AE"
+      - "#48CAE4"
+      - "#B5179E"
+    planes:
+      default_opacity: 0.32
+      edge_opacity: 0.85
+      line_width: 2.0
+      palette:
+        - fill: "#3A86FF"
+          edge: "#1D4ED8"
+        - fill: "#FF006E"
+          edge: "#BE185D"
+        - fill: "#00BBF9"
+          edge: "#0284C7"
+        - fill: "#FB5607"
+          edge: "#C2410C"
+
+  cpk_classic:
+    description: "国際標準CPK / Jmolベースの見慣れた標準配色"
+    background: "#FFFFFF"
+    unit_cell: "#1A1A1A"
+    subcell_highlight: "#E63946"
+    bond: "#A0A0A0"
+    silhouette: "#111111"
+    axes:
+      a: "#FF0000"
+      b: "#00AA00"
+      c: "#0000FF"
+    elements:
+      Ni: "#50D050"
+      Mn: "#9C7AC7"
+      Ga: "#C28F8F"
+      In: "#A67573"
+      Sn: "#668080"
+      Fe: "#E06633"
+      Co: "#F090A0"
+      Ti: "#BFC2C7"
+      Al: "#BFA6A6"
+      Cu: "#C88033"
+      O:  "#FF0D0D"
+      N:  "#3050F8"
+      C:  "#909090"
+    fallback_order:
+      - "#4EA8DE"
+      - "#F9C74F"
+      - "#90BE6D"
+      - "#F8961E"
+      - "#577590"
+    planes:
+      default_opacity: 0.35
+      edge_opacity: 0.85
+      line_width: 2.0
+      palette:
+        - fill: "#4EA8DE"
+          edge: "#1D4ED8"
+        - fill: "#F94144"
+          edge: "#9B2226"
+        - fill: "#90BE6D"
+          edge: "#386641"
+
+  okabe_ito_safe:
+    description: "国際誌推奨・色覚多様性（カラーユニバーサルデザイン）対応セット"
+    background: "#FFFFFF"
+    unit_cell: "#111827"
+    subcell_highlight: "#D55E00"
+    bond: "#CBD5E1"
+    silhouette: "#0F172A"
+    axes:
+      a: "#D55E00"
+      b: "#009E73"
+      c: "#0072B2"
+    elements:
+      Ni: "#009E73"
+      Mn: "#CC79A7"
+      Ga: "#E69F00"
+      In: "#56B4E9"
+      Sn: "#7F7F7F"
+      Fe: "#D55E00"
+      Co: "#0072B2"
+      Ti: "#999999"
+      Al: "#56B4E9"
+      Cu: "#E69F00"
+      O:  "#D55E00"
+      N:  "#0072B2"
+      C:  "#4B5563"
+    fallback_order:
+      - "#56B4E9"
+      - "#F0E442"
+      - "#009E73"
+      - "#E69F00"
+      - "#CC79A7"
+      - "#0072B2"
+    planes:
+      default_opacity: 0.35
+      edge_opacity: 0.90
+      line_width: 2.0
+      palette:
+        - fill: "#56B4E9"
+          edge: "#0072B2"
+        - fill: "#E69F00"
+          edge: "#B45309"
+        - fill: "#009E73"
+          edge: "#065F46"
+        - fill: "#CC79A7"
+          edge: "#831843"
+
+  mono_contrast:
+    description: "白黒印刷・特許図面・モノクロ資料向け（明度差識別）"
+    background: "#FFFFFF"
+    unit_cell: "#111827"
+    subcell_highlight: "#000000"
+    bond: "#D1D5DB"
+    silhouette: "#000000"
+    axes:
+      a: "#111827"
+      b: "#4B5563"
+      c: "#9CA3AF"
+    elements:
+      Ni: "#6C757D"
+      Mn: "#2B2D42"
+      Ga: "#CED4DA"
+      Fe: "#343A40"
+      Co: "#8D99AE"
+      Ti: "#ADB5BD"
+      Al: "#E9ECEF"
+    fallback_order:
+      - "#2B2D42"
+      - "#6C757D"
+      - "#ADB5BD"
+      - "#DEE2E6"
+      - "#F8F9FA"
+    planes:
+      default_opacity: 0.30
+      edge_opacity: 0.90
+      line_width: 2.0
+      palette:
+        - fill: "#6C757D"
+          edge: "#212529"
+        - fill: "#ADB5BD"
+          edge: "#495057"
+        - fill: "#CED4DA"
+          edge: "#6C757D"

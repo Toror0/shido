@@ -1,0 +1,18 @@
+# Elsevier の共通の決まり（Acta Mater.・Scripta Mater.・J. Alloys Compd. などが extends で引き継ぐ）
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25、公式ページ）
+name: Elsevier（共通）
+publisher: Elsevier
+width_mm: {single: 90, one_half: 140, double: 190}   # 別のページでは 85 / 127 / 175
+max_height_mm: 248                                    # 58.5 picas
+fonts: [Arial, Helvetica, Times New Roman, Courier, Symbol]
+text_pt: {body: 7, min: 6}                            # 通常 7 pt、添字は最小 6 pt
+min_line_pt: 0.1
+dpi: {line: 1000, photo: 300, combination: 500}
+formats: [eps, pdf, tiff, jpeg, office]
+color_mode: RGB
+sources:
+  - url: https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions
+    checked: 2026-11-25
+  - url: https://www.elsevier.com/authors/policies-and-guidelines/artwork-and-media-instructions/artwork-sizing
+    checked: 2026-11-25
+unverified: [panel_label.style, panel_label.bold, panel_label.size_pt]

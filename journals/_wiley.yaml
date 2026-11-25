@@ -1,0 +1,24 @@
+# Wiley（Adv. Mater.・Adv. Funct. Mater.）の共通の決まり。未確認が多い
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25、公式ページ）
+name: Wiley（共通）
+publisher: Wiley
+fonts: [Arial, Helvetica]
+dpi: {line: 600, photo: 300}          # 線画 600–1200
+formats: [eps, pdf, tiff, png]
+color_mode: RGB                       # 印刷は CMYK・オンラインは RGB
+notes: 図の幅は 80–180 mm の範囲とだけ確かめた（段ごとの数値は未確認）。
+sources:
+  - url: https://authors.wiley.com/
+    checked: 2026-11-25
+unverified:
+  - width_mm.single
+  - width_mm.one_half
+  - width_mm.double
+  - max_height_mm
+  - text_pt.body
+  - text_pt.min
+  - min_line_pt
+  - dpi.combination
+  - panel_label.style
+  - panel_label.bold
+  - panel_label.size_pt

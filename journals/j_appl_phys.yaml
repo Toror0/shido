@@ -1,0 +1,4 @@
+name: Journal of Applied Physics
+extends: _aip
+aliases: ["jap", "J. Appl. Phys."]
+notes: AIP の共通規定（APL などの「その他の雑誌」）をそのまま使う。原文に JAP の名前は無かった。

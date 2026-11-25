@@ -1,0 +1,6 @@
+name: Chemistry of Materials
+extends: _acs
+aliases: ["Chem. Mater."]
+sources:
+  - url: https://pubs.acs.org/journal/cmatex
+    checked: 2026-11-25

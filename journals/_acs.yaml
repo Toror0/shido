@@ -1,0 +1,17 @@
+# ACS（Chem. Mater.・Inorg. Chem.）の共通の決まり
+# 調べ：開発メモ/雑誌の図の規定_調べ.md（2026-11-25、公式ページ）
+name: ACS（共通）
+publisher: American Chemical Society
+width_mm: {single: 84.6, double: 177.8}   # 1 段は最大 240 pt、2 段は 300–504 pt（広いほう）
+max_height_mm: 232.8                      # 660 pt（キャプションを含む）
+fonts: [Helvetica, Arial]
+text_pt: {body: 8, min: 4.5}
+min_line_pt: 0.5
+dpi: {line: 1200, photo: 300, combination: 600}   # 白黒線画 1200・カラー 300・灰色 600
+formats: [eps, tiff, pdf, jpeg, png]
+color_mode: RGB
+panel_label: {style: "(a)"}               # 例として (a)。太字・大きさは未確認
+sources:
+  - url: https://publish.acs.org/
+    checked: 2026-11-25
+unverified: [width_mm.one_half, panel_label.bold, panel_label.size_pt]

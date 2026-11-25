@@ -1,0 +1,3 @@
+name: Applied Physics Letters
+extends: _aip
+aliases: ["apl", "Appl. Phys. Lett."]

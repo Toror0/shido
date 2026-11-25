@@ -1,0 +1,6 @@
+name: npj Computational Materials
+extends: _springer_nature
+aliases: ["npj Comput. Mater."]
+sources:
+  - url: https://www.nature.com/npjcompumats/
+    checked: 2026-11-25

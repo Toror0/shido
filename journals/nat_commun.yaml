@@ -1,0 +1,6 @@
+name: Nature Communications
+extends: _springer_nature
+aliases: ["nature_communications", "Nat. Commun."]
+sources:
+  - url: https://www.nature.com/ncomms/
+    checked: 2026-11-25
