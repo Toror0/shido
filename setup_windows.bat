@@ -79,7 +79,7 @@ echo ===========================================================
 echo  準備ができました。
 echo  画面（GUI）を開く : launch_gui.vbs をダブルクリック
 echo  コマンドで試す   : .venv\Scripts\python.exe server.py demo
-echo  Claude Code に登録 : README.md の「Claude Code に登録する」を見る
+echo  Claude Code に登録 : README_ja.md の「Claude Code に登録する」を見る
 echo ===========================================================
 if /i not "%~1"=="/nopause" pause
 exit /b 0
