@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Questions & ideas (Discussions) / 質問・感想"
+    url: https://github.com/Toror0/shido/discussions
+    about: "Ask questions or share ideas and results. / 質問・使ってみた感想・アイデアはこちら。"
+  - name: "Feedback form (no GitHub account needed) / アカウント無しのフォーム"
+    url: FORM_URL_PLACEHOLDER
+    about: "Send feedback without a GitHub account. / GitHub アカウントが無くても送れます。"

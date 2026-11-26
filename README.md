@@ -83,6 +83,14 @@ Then ask Claude, e.g. "Analyse my.cif with shido and make an Acta Materialia fig
 - The GUI, log messages and output folder names are in Japanese; figures, CSV headers and the Methods sentence are in English
 - Known limitations are listed in the [Japanese README, section 7](README_ja.md#7-分かっている弱点まだ直していないこと)
 
+## Feedback
+
+- Bugs and feature requests (including new journal formats): [Issues](https://github.com/Toror0/shido/issues/new/choose) — templates are provided
+- Questions, ideas and results: [Discussions](https://github.com/Toror0/shido/discussions)
+- No GitHub account? Use the [feedback form](FORM_URL_PLACEHOLDER)
+
+English or Japanese is fine. Please do not post unpublished or confidential structures.
+
 ## License
 
 [Apache-2.0](LICENSE)

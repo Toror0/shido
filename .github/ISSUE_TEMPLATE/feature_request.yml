@@ -1,0 +1,45 @@
+name: "Feature request / 要望"
+description: "Suggest a new feature or improvement / 新しい機能・改善の提案"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Japanese is fine. / 英語でも日本語でも大丈夫です。
+        To request a new journal format, please use "Journal format request" instead. / 雑誌フォーマットの追加は「Journal format request」のひな形を使ってください。
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What do you want to do / what is the problem? / やりたいこと・困っていること"
+      description: "Describe your goal or the difficulty. / 目的や困っている点を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Proposed solution / 案"
+      description: "How you think it could work (optional). / こう動くとよい、という案（任意）。"
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area / 対象"
+      multiple: true
+      options:
+        - "Figures / 図"
+        - "Analysis / 解析"
+        - "Journal formats / 雑誌フォーマット"
+        - "GUI"
+        - "CLI / コマンド"
+        - "MCP"
+        - "Other / その他"
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: "References / 参考"
+      description: "Papers, journal guidelines, other software that does this, etc. / 論文、雑誌の規定、同じことができるほかのソフトなど。"
+    validations:
+      required: false

@@ -1,0 +1,91 @@
+name: "Journal format request / 雑誌フォーマットの追加依頼"
+description: "Ask us to add a journal's figure rules / 雑誌の図の決まりを追加してほしい"
+labels: ["journal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in only what the official author guidelines say and leave the rest blank (unknown values are never guessed). Format: [journals/README.md](https://github.com/Toror0/shido/blob/main/journals/README.md).
+        公式の投稿規定に書いてある値だけで大丈夫です。分からない欄は空のままにしてください（推測では埋めません）。書き方は [journals/README.md](https://github.com/Toror0/shido/blob/main/journals/README.md)。
+  - type: input
+    id: journal_name
+    attributes:
+      label: "Journal name / 雑誌名"
+      description: "Full name, plus publisher and abbreviation if known. / 正式名（分かれば出版社・略称も）。"
+      placeholder: "Journal of Magnetism and Magnetic Materials (Elsevier, J. Magn. Magn. Mater.)"
+    validations:
+      required: true
+  - type: input
+    id: guideline_url
+    attributes:
+      label: "Author guidelines URL / 投稿規定の URL"
+      description: "The page that describes figure (artwork) requirements. / 図（artwork）の決まりが書いてあるページ。"
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: width
+    attributes:
+      label: "Column widths / 段の幅"
+      description: "Single / 1.5 / double column, in mm or inches. / 1 段・1.5 段・2 段（mm か inch）。"
+      placeholder: "single 90 mm, 1.5 140 mm, double 190 mm"
+    validations:
+      required: false
+  - type: input
+    id: max_height
+    attributes:
+      label: "Maximum height / 最大の高さ"
+      placeholder: "240 mm"
+    validations:
+      required: false
+  - type: input
+    id: dpi
+    attributes:
+      label: "Resolution (dpi) / 解像度"
+      description: "Line art / photo (halftone) / combination. / 線画・写真・組み合わせ。"
+      placeholder: "line 1000, photo 300, combination 500"
+    validations:
+      required: false
+  - type: input
+    id: formats
+    attributes:
+      label: "File formats / 形式"
+      placeholder: "TIFF, EPS, PDF"
+    validations:
+      required: false
+  - type: input
+    id: color_mode
+    attributes:
+      label: "Color mode / 色の形式"
+      placeholder: "RGB / CMYK / grayscale"
+    validations:
+      required: false
+  - type: input
+    id: fonts
+    attributes:
+      label: "Fonts and text size / フォント・文字の大きさ"
+      placeholder: "Arial or Helvetica, 7 pt (min 6 pt)"
+    validations:
+      required: false
+  - type: input
+    id: line_width
+    attributes:
+      label: "Minimum line width / 最小の線の太さ"
+      placeholder: "0.5 pt"
+    validations:
+      required: false
+  - type: input
+    id: panel_label
+    attributes:
+      label: "Panel labels / パネル記号の書き方"
+      description: "Style: (a), a, A, (A) or a); bold or not; size. / 書き方・太字か・大きさ。"
+      placeholder: "(a), bold, 8 pt"
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Other notes / その他"
+      description: "Anything else (e.g. same rules as another journal of the publisher). / ほか（同じ出版社のほかの雑誌と同じ決まり、など）。"
+    validations:
+      required: false

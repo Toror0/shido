@@ -1,0 +1,93 @@
+name: "Bug report / 不具合の報告"
+description: "Something does not work as expected / 思ったとおりに動かない"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting! English or Japanese is fine.
+        報告ありがとうございます。英語でも日本語でも大丈夫です。
+
+        **Do not paste unpublished or confidential structures.** / **未公開・非公開の構造データは貼らないでください。**
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: "What happened? / 何が起きたか"
+      description: "A clear description of the problem. / 起きたことを具体的に。"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce / 再現手順"
+      description: "Buttons you clicked, or the exact command. / 押したボタン、または打ったコマンドそのまま。"
+      placeholder: |
+        1. Open my.cif in the GUI
+        2. Choose Acta Materialia and click ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected result / 期待した結果"
+    validations:
+      required: false
+  - type: dropdown
+    id: usage
+    attributes:
+      label: "How do you use Shido? / 使い方"
+      options:
+        - "GUI (exe from Releases) / GUI（Releases の exe）"
+        - "GUI (from source, gui.py) / GUI（ソースから）"
+        - "CLI (server.py ...) / コマンド"
+        - "MCP server (Claude etc.) / MCP サーバー"
+    validations:
+      required: true
+  - type: input
+    id: shido_version
+    attributes:
+      label: "Shido version / Shido の版"
+      description: "e.g. 3.0.0 (Release zip name, or version in pyproject.toml) / 例 3.0.0（Releases の zip 名、または pyproject.toml の version）"
+      placeholder: "3.0.0"
+    validations:
+      required: false
+  - type: input
+    id: windows_version
+    attributes:
+      label: "Windows version / Windows の版"
+      placeholder: "Windows 11 23H2"
+    validations:
+      required: false
+  - type: input
+    id: python_version
+    attributes:
+      label: "Python version (source only) / Python の版（ソースのとき）"
+      description: "Output of: .venv\\Scripts\\python.exe --version"
+      placeholder: "3.12.x"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Error message / log / エラーメッセージ・ログ"
+      description: "Paste the full text. It is shown as code automatically. / 全文を貼ってください（自動でコードとして表示されます）。"
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: cif
+    attributes:
+      label: "CIF file / CIF"
+      description: |
+        Attach the CIF, or tell us where it is from (e.g. Materials Project mp-xxxx, COD id). Do not attach unpublished or confidential data.
+        CIF を添付するか入手元（例 Materials Project の mp-xxxx、COD の番号）を書いてください。未公開・非公開のデータは添付しないでください。
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots / スクリーンショット"
+      description: "Drag and drop images here. / 画像をここにドラッグしてください。"
+    validations:
+      required: false
