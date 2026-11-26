@@ -48,7 +48,7 @@ body:
     id: shido_version
     attributes:
       label: "Shido version / Shido の版"
-      description: "e.g. 3.0.0 (Release zip name, or version in pyproject.toml) / 例 3.0.0（Releases の zip 名、または pyproject.toml の version）"
+      description: "e.g. 3.0.0 (exe: Releases zip name or the window title; source: `python server.py --version`) / 例 3.0.0（exe は zip 名か窓の題名、ソースは `python server.py --version`）"
       placeholder: "3.0.0"
     validations:
       required: false
