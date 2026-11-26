@@ -311,6 +311,6 @@ build.bat
 
 - 不具合・要望（雑誌フォーマットの追加も）：[Issues](https://github.com/Toror0/shido/issues/new/choose)（ひな形があります）
 - 質問・感想・アイデア：[Discussions](https://github.com/Toror0/shido/discussions)
-- GitHub アカウントが無い方：[フォーム](FORM_URL_PLACEHOLDER)
+- GitHub アカウントが無い方：[フォーム](https://docs.google.com/forms/d/e/1FAIpQLSfnEYR0vR2WWtVOT7VwiziH3_4tDA_YTRjbl1w6Rl-uT5mI4Q/viewform)
 
 日本語でも英語でも大丈夫です。未公開・非公開の構造データは貼らないでください。

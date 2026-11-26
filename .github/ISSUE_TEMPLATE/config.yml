@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/Toror0/shido/discussions
     about: "Ask questions or share ideas and results. / 質問・使ってみた感想・アイデアはこちら。"
   - name: "Feedback form (no GitHub account needed) / アカウント無しのフォーム"
-    url: FORM_URL_PLACEHOLDER
+    url: https://docs.google.com/forms/d/e/1FAIpQLSfnEYR0vR2WWtVOT7VwiziH3_4tDA_YTRjbl1w6Rl-uT5mI4Q/viewform
     about: "Send feedback without a GitHub account. / GitHub アカウントが無くても送れます。"
