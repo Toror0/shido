@@ -10,6 +10,14 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent
 
+# exe（GUI）に丸ごと入れる部品
+COLLECT_ALL = ("pymatgen", "pyvista", "vtkmodules", "spglib", "monty", "matplotlib", "scipy", "pandas")
+# exe に入れない部品（GUI は MCP サーバーを使わない）
+EXCLUDES = (
+    "mcp", "typer", "pyvista.trame", "trame",
+    "pytest", "IPython", "jupyter", "notebook", "PyQt5", "PyQt6", "PySide2", "PySide6",
+)
+
 
 def parse_args(argv: list[str]) -> tuple[argparse.Namespace, list[str]]:
     if "--" in argv:
@@ -67,8 +75,14 @@ def main(argv: list[str] | None = None) -> int:
         "settings_defaults.yaml;.",
         "--add-data",
         "journals;journals",
-        "gui.py",
     ]
+    # 部品のデータ（pymatgen の periodic_table.json.gz など）・DLL・中で読むモジュールを全部入れる
+    for pkg in COLLECT_ALL:
+        pyinstaller_cmd += ["--collect-all", pkg]
+    # GUI では使わない部分（MCP・pyvista の jupyter/trame など。読み込むと止まる）は入れない
+    for mod in EXCLUDES:
+        pyinstaller_cmd += ["--exclude-module", mod]
+    pyinstaller_cmd.append("gui.py")
     print("テストが通りました。バイナリをビルドします...", flush=True)
     build_result = subprocess.run(pyinstaller_cmd, cwd=ROOT_DIR)
     return build_result.returncode
