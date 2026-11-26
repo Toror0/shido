@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use Shido in your research, please cite it as below."
+title: "Shido: publication-quality crystal structure figures and analyses from CIF files"
+type: software
+authors:
+  - family-names: Takeuchi
+    given-names: Kaito
+version: 3.0.0
+date-released: 2026-11-26
+license: Apache-2.0
+repository-code: "https://github.com/Toror0/shido"
+abstract: >-
+  Shido generates publication-quality crystal structure figures and analyses
+  (lattice parameters, bonds, symmetry, polyhedra, structure factors, simulated
+  XRD, slabs, Heusler sublattice models, DFT c/a sweeps) from CIF files on
+  Windows, with a GUI, a command line and an MCP server. Every run records a
+  recipe (versions, arguments and file hashes) so figures can be reproduced.
+keywords:
+  - crystallography
+  - crystal structure
+  - CIF
+  - pymatgen
+  - materials science
+  - scientific visualization
+  - MCP
