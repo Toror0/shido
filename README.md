@@ -28,7 +28,10 @@ Three ways to use it: a **GUI**, a **command line**, and an **MCP server** so Cl
 
 ### Option A: download the exe (no Python needed)
 
-If a build is available on the [Releases](https://github.com/Toror0/shido/releases) page, download the zip, unzip it and run the exe inside. This is the GUI only.
+Download `Shido-<version>-windows-x64.zip` from the [Releases](https://github.com/Toror0/shido/releases) page, unzip it to a folder you can write to (e.g. Documents, not `C:\Program Files`) and run `Shido\Shido.exe`. This is the GUI only.
+
+- The exe is not code-signed, so Windows SmartScreen may say "Windows protected your PC": click **More info → Run anyway**
+- Results go to `出力\` next to `Shido.exe`; GUI settings are saved to `settings_user.yaml` there too
 
 ### Option B: from source
 

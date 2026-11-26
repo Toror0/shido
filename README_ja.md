@@ -11,7 +11,10 @@
 |---|---|
 | ![雑誌フォーマットのパネル図](docs/images/journal_figure.png) | ![はじめに読む.html の画面](docs/images/report_html.png) |
 
-すぐ試したいときは、[Releases](https://github.com/Toror0/shido/releases) の Windows 用 exe（Python を入れなくても動く画面版）も使えます（置いてあるとき）。
+すぐ試したいときは、[Releases](https://github.com/Toror0/shido/releases) の Windows 用 exe（Python を入れなくても動く画面版）を使えます。
+`Shido-<版>-windows-x64.zip` を書き込めるフォルダ（ドキュメントなど。`C:\Program Files` は避ける）に解凍し、`Shido\Shido.exe` を起動します。
+「Windows によって PC が保護されました」と出たら、署名をしていないためなので「詳細情報」→「実行」を押してください。
+結果は `Shido.exe` の横の `出力\` に、画面で変えた設定は同じ場所の `settings_user.yaml` に保存されます。
 
 バージョン：**3.0.0**（番号は `shido/core/__init__.py` の `__version__` 1か所で決めています。`server.py --version` で確かめられます）
 
