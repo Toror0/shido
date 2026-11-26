@@ -18,7 +18,7 @@ T2C_ROOT = Path(__file__).resolve().parents[2] / "text2cif"
 
 def _describe_to_cif():
     if T2C_ROOT.is_dir() and str(T2C_ROOT) not in sys.path:
-        sys.path.append(str(T2C_ROOT))  # appended: never shadows crystal-mcp modules
+        sys.path.append(str(T2C_ROOT))  # appended: never shadows Shido modules
     try:
         from text2cif.core.describe import describe_to_cif
     except Exception as exc:  # noqa: BLE001

@@ -297,7 +297,7 @@ def write_cube(
     lat = lattice if lattice is not None else structure.lattice  # type: ignore[union-attr]
     vox = lat.matrix / BOHR_TO_ANGSTROM / np.array([[nx], [ny], [nz]])
     o = (np.zeros(3) if origin_frac is None else np.asarray(origin_frac, dtype=float)) @ lat.matrix / BOHR_TO_ANGSTROM
-    out = [comment or "cube written by CrystalAnalyzerMCP", "values"]
+    out = [comment or "cube written by Shido", "values"]
     out.append(f"{len(structure or []):5d} {o[0]:12.6f} {o[1]:12.6f} {o[2]:12.6f}")
     for n, v in zip((nx, ny, nz), vox):
         out.append(f"{n:5d} {v[0]:12.6f} {v[1]:12.6f} {v[2]:12.6f}")
@@ -940,7 +940,7 @@ def write_grd(path: str | Path, grid: VolumetricGrid, title: str = "") -> Path:
     p = Path(path)
     a, b, c, al, be, ga = grid.lattice.parameters
     nx, ny, nz = grid.shape
-    out = [title or "grd written by CrystalAnalyzerMCP",
+    out = [title or "grd written by Shido",
            f"{a:.6f} {b:.6f} {c:.6f} {al:.4f} {be:.4f} {ga:.4f}", f"{nx} {ny} {nz}"]
     flat = np.asarray(grid.data, dtype=float).ravel(order="F")
     for i in range(0, flat.size, 6):
@@ -1035,7 +1035,7 @@ def build_volumes(
         entry["unit"] = g.unit
         entry["files"] = []
         for fmt in fmts:
-            p = write_volume(g, out / f"{name}.{fmt}", fmt, comment=f"{name} ({g.unit}) by CrystalAnalyzerMCP")
+            p = write_volume(g, out / f"{name}.{fmt}", fmt, comment=f"{name} ({g.unit}) by Shido")
             files[p.name] = str(p)
             entry["files"].append(str(p))
         if name == "patterson":

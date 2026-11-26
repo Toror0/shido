@@ -10,7 +10,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-logger = logging.getLogger("crystal_mcp")
+logger = logging.getLogger("shido")
 
 _OCC_FULL_TOL = 1e-3
 

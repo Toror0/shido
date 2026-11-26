@@ -36,7 +36,7 @@ def out_dir(tmp_path: Path) -> Path:
 
 @pytest.fixture(autouse=True)
 def _output_root_in_tmp(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
-    """Default runs (no output_dir) write to <tmp>/出力, never to crystal-mcp/出力."""
+    """Default runs (no output_dir) write to <tmp>/出力, never to <repo root>/出力."""
     root = tmp_path / "出力"
     monkeypatch.setenv("CRYSTAL_MCP_OUTPUT_ROOT", str(root))
     return root

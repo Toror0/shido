@@ -1,6 +1,6 @@
 # Real-world CIF test fixtures from COD
 
-These CIF files were downloaded from the [Crystallography Open Database (COD)](https://www.crystallography.net/cod/) to test `crystal-mcp` against real experimental structures containing partial occupancies, mixed sites, split sites, numerical uncertainties, hydrogen-bearing molecular crystals, and triclinic cells.
+These CIF files were downloaded from the [Crystallography Open Database (COD)](https://www.crystallography.net/cod/) to test `Shido` against real experimental structures containing partial occupancies, mixed sites, split sites, numerical uncertainties, hydrogen-bearing molecular crystals, and triclinic cells.
 
 | COD ID | Chemical Formula | Space Group | Conditions Covered | Source URL |
 | :--- | :--- | :--- | :--- | :--- |

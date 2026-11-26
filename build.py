@@ -59,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         "--noconfirm",
         "--clean",
         "--name",
-        "CrystalAnalyzerMCP",
+        "Shido",
         "--windowed",
         "--add-data",
         "themes.yaml;.",

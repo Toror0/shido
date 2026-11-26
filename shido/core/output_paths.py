@@ -1,6 +1,6 @@
 """Where results are saved.
 
-* Every run gets a new folder ``crystal-mcp/出力/<YYYY-MM-DD_HHMMSS>_<what>/``
+* Every run gets a new folder ``<repo root>/出力/<YYYY-MM-DD_HHMMSS>_<what>/``
   (`new_run_dir`). Giving ``output_dir`` / ``--out-dir`` keeps the old behaviour.
 * Inside, the same sub-folders everywhere: 図/ (figures), XRD/, 3D/ (HTML, STL,
   VRML), 数値/ (CSV, JSON), 構造/ (CIF, POSCAR, XYZ, ...).
@@ -35,7 +35,7 @@ ENV_OUTPUT_ROOT = "CRYSTAL_MCP_OUTPUT_ROOT"
 
 
 def output_root() -> Path:
-    """``crystal-mcp/出力`` (next to the exe when frozen; env CRYSTAL_MCP_OUTPUT_ROOT wins)."""
+    """``<repo root>/出力`` (next to the exe when frozen; env CRYSTAL_MCP_OUTPUT_ROOT wins)."""
     env = os.environ.get(ENV_OUTPUT_ROOT)
     if env:
         return Path(env)
@@ -443,7 +443,7 @@ def write_index_html(
         "<!DOCTYPE html>\n<html lang=\"ja\"><head><meta charset=\"utf-8\">"
         f"<title>{html.escape(title)}</title><style>{_CSS}</style></head>"
         "<body><main>" + "".join(head) + "".join(body)
-        + "<p class='small'>CrystalAnalyzerMCP が作りました。このファイルはインターネットを使いません。</p>"
+        + "<p class='small'>Shido が作りました。このファイルはインターネットを使いません。</p>"
         "</main></body></html>\n"
     )
     path = root / INDEX_NAME

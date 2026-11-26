@@ -73,7 +73,7 @@ def test_disordered_alloy_dominant_color_render(out_dir, caplog):
     assert set(colors) == {"Mn", "Ga", "Ni"}
     assert all(HEX_RE.match(c) for c in colors.values())
 
-    with caplog.at_level(logging.WARNING, logger="crystal_mcp"):
+    with caplog.at_level(logging.WARNING, logger="shido"):
         img = _render(s, out_dir / "b2.png")
     assert img.exists() and img.stat().st_size > 0
     assert any("partially occupied" in r.getMessage() for r in caplog.records)
@@ -177,7 +177,7 @@ def test_dense_bonds_limited_to_nearest(out_dir, caplog):
     s, bonds = _dense_fcc_bonds()
     assert len(bonds) > renderer.MAX_RENDER_BONDS
 
-    with caplog.at_level(logging.WARNING, logger="crystal_mcp"):
+    with caplog.at_level(logging.WARNING, logger="shido"):
         limited = renderer.limit_render_bonds(bonds)
     assert 0 < len(limited) <= renderer.MAX_RENDER_BONDS
     lengths = np.array([np.linalg.norm(b[1] - b[0]) for b in limited])
@@ -448,6 +448,6 @@ def test_proxy_composition_drift_warns(caplog):
         [{"Mn": 0.5, "Ga": 0.5}, "Ni"],
         [[0, 0, 0], [0.5, 0.5, 0.5]],
     )
-    with caplog.at_level(logging.WARNING, logger="crystal_mcp"):
+    with caplog.at_level(logging.WARNING, logger="shido"):
         to_ordered_proxy(s)
     assert any("changes the composition" in r.getMessage() for r in caplog.records)

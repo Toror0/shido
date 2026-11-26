@@ -1,4 +1,4 @@
-"""Simple desktop UI (tkinter) for CrystalAnalyzerMCP.
+"""Simple desktop UI (tkinter) for Shido.
 
 Allows researchers to select CIF files, major crystallographic planes (Miller indices),
 Heusler alloy composition/elements, and color themes, then run analysis and open the
@@ -293,7 +293,7 @@ def warning_to_japanese(text: str) -> str:
 class CrystalAnalyzerGUI(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
-        self.title(f"CrystalAnalyzerMCP v{__version__} — 結晶構造解析・論文図表生成")
+        self.title(f"Shido v{__version__} — 結晶構造解析・論文図表生成")
         self.geometry("860x760")
         self.minsize(740, 620)
         self.last_output_dir: Path | None = None

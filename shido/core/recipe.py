@@ -40,7 +40,7 @@ from typing import Any, Callable, Iterator, Mapping
 
 RECIPE_NAME = "recipe.json"
 SCHEMA = "crystal-mcp/recipe/1"
-TOOL_NAME = "CrystalAnalyzerMCP"
+TOOL_NAME = "Shido"
 LIBRARIES: tuple[str, ...] = ("pymatgen", "pyvista", "vtk", "numpy", "spglib", "matplotlib", "scipy")
 # Arguments / options that only say WHERE to save: a rerun always makes a new folder.
 OUTPUT_ARGS: frozenset[str] = frozenset({"output_dir", "output_path", "out_dir", "base_dir"})
@@ -62,7 +62,7 @@ def _repo_root() -> Path:
 
 @functools.lru_cache(maxsize=1)
 def git_revision() -> dict[str, Any] | None:
-    """{"commit": short hash, "dirty": bool} of the crystal-mcp checkout, or None (no git / exe)."""
+    """{"commit": short hash, "dirty": bool} of the Shido checkout, or None (no git / exe)."""
     if getattr(sys, "frozen", False):
         return None
     root = str(_repo_root())
@@ -449,7 +449,7 @@ def load_recipe(path: str | Path) -> tuple[dict[str, Any], Path]:
         raise FileNotFoundError(f"{RECIPE_NAME} がありません: {p}")
     data = json.loads(p.read_text(encoding="utf-8"))
     if not str(data.get("schema", "")).startswith("crystal-mcp/recipe/"):
-        raise ValueError(f"crystal-mcp のレシピではありません: {p}")
+        raise ValueError(f"Shido のレシピではありません: {p}")
     return data, p.resolve()
 
 

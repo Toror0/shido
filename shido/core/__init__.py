@@ -1,4 +1,4 @@
-"""Runtime safety layer (validators and defensive helpers) for crystal-mcp."""
+"""Runtime safety layer (validators and defensive helpers) for Shido."""
 
 # The one place that holds the version number (server.py / gui.py read it).
 __version__ = "3.0.0"

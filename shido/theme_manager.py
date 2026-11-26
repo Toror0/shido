@@ -1,4 +1,4 @@
-"""Color theme manager (ColorManager + PlaneStyle) for CrystalAnalyzerMCP.
+"""Color theme manager (ColorManager + PlaneStyle) for Shido.
 
 Supports 4 themes from ``themes.yaml`` (acta_modern, cpk_classic, okabe_ito_safe,
 mono_contrast), 4-tier element color resolution, and (hkl) crystal plane styling.

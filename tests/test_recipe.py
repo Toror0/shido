@@ -46,7 +46,7 @@ def test_cli_run_writes_recipe(tmp_path, _output_root_in_tmp):
     r = _load(run)
 
     assert r["schema"] == rc.SCHEMA
-    assert r["tool"]["name"] == "CrystalAnalyzerMCP" and r["tool"]["version"]
+    assert r["tool"]["name"] == "Shido" and r["tool"]["version"]
     assert {"pymatgen", "pyvista", "vtk", "numpy"} <= set(r["libraries"])
     assert r["python"]
     assert r["call"]["kind"] == "cli" and r["call"]["argv"][0] == "export"
@@ -65,7 +65,7 @@ def test_cli_run_writes_recipe(tmp_path, _output_root_in_tmp):
     index = (run / INDEX_NAME).read_text(encoding="utf-8")
     assert "この図の作り方（レシピ）" in index
     assert "python server.py rerun" in index and str(run) in index
-    assert f"CrystalAnalyzerMCP {r['tool']['version']}" in index  # methods draft, value from the recipe
+    assert f"Shido {r['tool']['version']}" in index  # methods draft, value from the recipe
 
 
 def test_rerun_same_settings_gives_same_files(tmp_path, _output_root_in_tmp):

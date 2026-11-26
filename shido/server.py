@@ -1,4 +1,4 @@
-"""CrystalAnalyzerMCP: Dual-mode CLI and FastMCP server for crystal structure analysis."""
+"""Shido: Dual-mode CLI and FastMCP server for crystal structure analysis."""
 
 from __future__ import annotations
 
@@ -868,7 +868,7 @@ def create_mcp_server():
     except ModuleNotFoundError:
         from mcp.server.fastmcp import FastMCP as _MCPServer
 
-    mcp = _MCPServer("CrystalAnalyzerMCP")
+    mcp = _MCPServer("Shido")
     # Every @mcp.tool() below records its name and arguments, so the run folder gets recipe.json.
     _plain_tool = mcp.tool
     mcp.tool = _recipe.recording_tool_decorator(_plain_tool)
@@ -2261,7 +2261,7 @@ def run_demo_v2(
 
 def run_mcp_server() -> None:
     """Start the MCP stdio server exposing crystal analysis tools."""
-    print(f"[CrystalAnalyzerMCP v{__version__}] MCP server starting (stdio)...", file=sys.stderr)
+    print(f"[Shido v{__version__}] MCP server starting (stdio)...", file=sys.stderr)
     mcp = create_mcp_server()
     mcp.run()
 
@@ -2436,9 +2436,9 @@ def _bulk_options_from_args(args: argparse.Namespace) -> dict[str, Any]:
 
 def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP",
+        prog="Shido",
         description=(
-            f"CrystalAnalyzerMCP v{__version__}: crystal structure analyzer, renderer, "
+            f"Shido v{__version__}: crystal structure analyzer, renderer, "
             "slab cutter, and batch processor. "
             "Run with no arguments to start the FastMCP server."
         ),
@@ -2446,7 +2446,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--version",
         action="version",
-        version=f"CrystalAnalyzerMCP v{__version__}",
+        version=f"Shido v{__version__}",
     )
     parser.add_argument(
         "target",
@@ -2482,7 +2482,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         "--out-dir",
         type=str,
         default=None,
-        help="Base output directory (default: a new folder 出力/<date>_<name>/ in crystal-mcp).",
+        help="Base output directory (default: a new folder 出力/<date>_<name>/ next to Shido).",
     )
     parser.add_argument(
         "--no-polyhedra",
@@ -2660,7 +2660,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
 
 def _run_interactive_cli(base_dir: Path | None) -> int:
     """Terminal interactive wizard for selecting plane presets, elements, and theme."""
-    print("=== CrystalAnalyzerMCP 対話メニュー ===")
+    print("=== Shido 対話メニュー ===")
     print("実行モードを選んでください:")
     print("  1. 基本解析 + スラブ切り出し (Ni2MnGa デモ or CIF指定)")
     print("  2. 変態前後 2相比較 (Ni2MnGa L21 vs L10)")
@@ -2755,7 +2755,7 @@ def _run_measure_cli(argv: list[str]) -> int:
     import json
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP measure",
+        prog="Shido measure",
         description=(
             "Measure distance (2 atoms), angle (3), dihedral (4), the angle between two "
             "(hkl) planes, or a best plane. Atom = site index, CIF label or element+ordinal, "
@@ -2800,7 +2800,7 @@ def _run_symmetry_cli(argv: list[str]) -> int:
     import json
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP symmetry",
+        prog="Shido symmetry",
         description=(
             "Symmetry table: space group, symmetry operations (x,y,z), Wyckoff letter, "
             "multiplicity and site symmetry per site. Writes JSON + CSV with --out-dir."
@@ -2841,7 +2841,7 @@ def _run_transform_cli(argv: list[str]) -> int:
     import json
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP transform",
+        prog="Shido transform",
         description=(
             "Cell transformation: Niggli / standard / primitive cell, matrix P + origin shift "
             "((a',b',c') = (a,b,c)P, x' = P^-1(x-p)), supercell. Writes CIF + POSCAR with --out-dir."
@@ -2897,7 +2897,7 @@ def _run_export_cli(argv: list[str]) -> int:
     import json
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP export",
+        prog="Shido export",
         description=(
             "Export structure data: XYZ, P1 CIF, XTL, PDB, VRML (*.wrl), and all structures "
             "in one CIF (multicif)."
@@ -2945,7 +2945,7 @@ def _run_edit_cli(argv: list[str]) -> int:
     from shido.core.validator import ScientificValidationError
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP edit",
+        prog="Shido edit",
         description="Edit atoms / sites (add, remove, replace, move, occupancy, merge) and save a checked CIF.",
     )
     p.add_argument("cif", help="Structure file (.cif, POSCAR, ...).")
@@ -3010,7 +3010,7 @@ def _run_create_cli(argv: list[str]) -> int:
     from shido.core.validator import ScientificValidationError
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP create",
+        prog="Shido create",
         description="Build a structure from a space group, lattice and asymmetric unit, and save a checked CIF.",
     )
     p.add_argument("--spacegroup", "--sg", required=True, help="Symbol (Fm-3m) or number (225).")
@@ -3054,7 +3054,7 @@ def _run_polyhedra_cli(argv: list[str]) -> int:
     from shido.core.polyhedra_metrics import analyze_polyhedra as _analyze_polyhedra, write_polyhedra_report
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP polyhedra",
+        prog="Shido polyhedra",
         description=(
             "Polyhedron numbers per site (volume, distortion index, quadratic elongation, "
             "bond-angle variance, ECoN), bond valence sum, and with --madelung the Ewald "
@@ -3110,7 +3110,7 @@ def _run_structure_factors_cli(argv: list[str]) -> int:
     from shido.core.structure_factors import compute_structure_factors as _compute_sf, write_structure_factor_report
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP structure-factors",
+        prog="Shido structure-factors",
         description=(
             "Structure factor table F(hkl): |F|, phase, F^2, d, 2theta, multiplicity, extinct "
             "(systematic / structure), X-ray or neutron. Writes structure_factors.csv / .json with --out-dir."
@@ -3161,7 +3161,7 @@ def _run_displacement_cli(argv: list[str]) -> int:
     from shido.core.adp import analyze_displacement as _analyze_adp, write_displacement_report
 
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP displacement",
+        prog="Shido displacement",
         description=(
             "Thermal displacement parameters from the CIF (aniso U/B/beta, U_iso/B_iso): U_eq, "
             "principal axes and ellipsoid semi-axes. Writes displacement.csv / .json with --out-dir."
@@ -3199,7 +3199,7 @@ def _run_displacement_cli(argv: list[str]) -> int:
 def _run_slice_cli(argv: list[str]) -> int:
     """`server.py slice <volume> --slice "0 0 1@0.5" [--contours 0.05 ...] [--line-profile "x1 y1 z1 x2 y2 z2"]`"""
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP slice",
+        prog="Shido slice",
         description=(
             "2D sections (colour map + contour lines, axes in A) and line profiles of volumetric "
             "data (CHGCAR / LOCPOT / ELFCAR / *.cube / *.xsf / *.grd)."
@@ -3242,7 +3242,7 @@ def _run_slice_cli(argv: list[str]) -> int:
 def _run_volume_model_cli(argv: list[str]) -> int:
     """`server.py volume-model <cif|volume> [--model-density xray|neutron] [--grid 64] [--patterson] [--volume-diff B] [--export-volume cube,grd]`"""
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP volume-model",
+        prog="Shido volume-model",
         description=(
             "Make volumetric data: model electron density (X-ray) or nuclear density (neutron) "
             "from a structure, Patterson map, difference of two grids; written as Cube / VESTA grd "
@@ -3284,7 +3284,7 @@ def _run_volume_model_cli(argv: list[str]) -> int:
 def _run_morphology_cli(argv: list[str]) -> int:
     """`server.py morphology <cif> --faces "1 0 0:1.0,1 1 1:0.9" [--view x y z] [--export stl,html|none]`"""
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP morphology",
+        prog="Shido morphology",
         description=(
             "Crystal shape (morphology): convex polyhedron from {hkl} and central distances "
             "(symmetry-equivalent planes added), PNG, area table (CSV), STL and HTML."
@@ -3384,7 +3384,7 @@ def _main_cli(args_list: list[str]) -> int:
 
     parser = _build_arg_parser()
     args = parser.parse_args(args_list)
-    print(f"[CrystalAnalyzerMCP v{__version__}]")
+    print(f"[Shido v{__version__}]")
     bulk_options = _bulk_options_from_args(args)
     # 既定（どちらも付けない）は自動：陰イオンになる元素がある構造だけ多面体を描く
     show_polyhedra: bool | None = False if args.no_polyhedra else (True if args.polyhedra else None)
@@ -3394,7 +3394,7 @@ def _main_cli(args_list: list[str]) -> int:
     transparent = True if args.transparent else None
     if args.theme:
         active_theme = set_active_theme(args.theme)
-        print(f"[CrystalAnalyzerMCP] Active color theme: {active_theme}")
+        print(f"[Shido] Active color theme: {active_theme}")
     base_dir = Path(args.out_dir) if args.out_dir else None
 
     if args.plane and args.plane.strip().lower() == "list":
@@ -3416,7 +3416,7 @@ def _main_cli(args_list: list[str]) -> int:
         return 0
 
     if args.target.lower() == "demo-v2":
-        print("[CrystalAnalyzerMCP] Running v2.md all-in-one showcase (Design 1, 2, 3)...")
+        print("[Shido] Running v2.md all-in-one showcase (Design 1, 2, 3)...")
         v2_res = run_demo_v2(base_dir=base_dir, transparent=transparent)
         print(f"Design 1 (Phase Compare) PNG : {v2_res['design1_phase_compare'].get('figure_phase_compare_png')}")
         print(f"Design 1 (Phase Compare) SVG : {v2_res['design1_phase_compare'].get('figure_phase_compare_svg')}")
@@ -3425,14 +3425,14 @@ def _main_cli(args_list: list[str]) -> int:
         print(f"Design 3 (c/a Sweep) steps   : {v2_res['design3_ca_sweep'].get('num_steps')}")
         print(f"Design 3 (c/a Curve) PNG     : {v2_res['design3_ca_plot'].get('figure_ca_energy_png')}")
         print(f"Design 3 (c/a Curve) SVG     : {v2_res['design3_ca_plot'].get('figure_ca_energy_svg')}")
-        print("[CrystalAnalyzerMCP] v2.md showcase completed successfully.")
+        print("[Shido] v2.md showcase completed successfully.")
         _print_saved(v2_res)
         return 0
 
     if args.target.lower() == "demo":
         miller_index = tuple(args.hkl) if args.hkl is not None else (1, 1, 1)
         print(
-            f"[CrystalAnalyzerMCP] Running Ni2MnGa L21 demo "
+            f"[Shido] Running Ni2MnGa L21 demo "
             f"(Miller index {miller_index})..."
         )
         res = run_demo(
@@ -3447,7 +3447,7 @@ def _main_cli(args_list: list[str]) -> int:
         print(f"Demo CIF            : {res['demo_cif']}")
         _print_bulk_result(res["bulk_analysis"])
         _print_slab_result(res["slab_generation"])
-        print("[CrystalAnalyzerMCP] Demo completed successfully.")
+        print("[Shido] Demo completed successfully.")
         _print_saved(res)
         return 0
 
@@ -3463,7 +3463,7 @@ def _main_cli(args_list: list[str]) -> int:
             print(f"Error: Batch directory not found: {batch_input}", file=sys.stderr)
             return 1
         miller_index = tuple(args.hkl) if args.hkl is not None else None
-        print(f"[CrystalAnalyzerMCP] Running batch analysis on {batch_input}...")
+        print(f"[Shido] Running batch analysis on {batch_input}...")
         batch_res = run_batch(
             input_dir=batch_input,
             output_dir=args.out_dir,
@@ -3476,7 +3476,7 @@ def _main_cli(args_list: list[str]) -> int:
             **bulk_options,
         )
         _print_batch_result(batch_res)
-        print("[CrystalAnalyzerMCP] Batch analysis completed.")
+        print("[Shido] Batch analysis completed.")
         _print_saved(batch_res)
         return 0
 
@@ -3484,7 +3484,7 @@ def _main_cli(args_list: list[str]) -> int:
     if target_path.is_dir():
         miller_index = tuple(args.hkl) if args.hkl is not None else None
         print(
-            f"[CrystalAnalyzerMCP] Directory detected; running batch analysis on {target_path}..."
+            f"[Shido] Directory detected; running batch analysis on {target_path}..."
         )
         batch_res = run_batch(
             input_dir=target_path,
@@ -3498,7 +3498,7 @@ def _main_cli(args_list: list[str]) -> int:
             **bulk_options,
         )
         _print_batch_result(batch_res)
-        print("[CrystalAnalyzerMCP] Batch analysis completed.")
+        print("[Shido] Batch analysis completed.")
         _print_saved(batch_res)
         return 0
 
@@ -3506,7 +3506,7 @@ def _main_cli(args_list: list[str]) -> int:
         print(f"Error: CIF file or directory not found: {target_path}", file=sys.stderr)
         return 1
 
-    print(f"[CrystalAnalyzerMCP] Loading structure from {target_path}...")
+    print(f"[Shido] Loading structure from {target_path}...")
     if args.all_blocks:
         entries = load_structures_all(target_path)
     else:
@@ -3521,7 +3521,7 @@ def _main_cli(args_list: list[str]) -> int:
         bulk_options["adp"] = str(target_path)
     multi = len(entries) > 1
     if multi:
-        print(f"[CrystalAnalyzerMCP] {len(entries)} data blocks found; each goes to its own folder.")
+        print(f"[Shido] {len(entries)} data blocks found; each goes to its own folder.")
     stem = sanitize_name(structure_stem(target_path))
     # 既定は 出力/<日時>_<CIF名>/（データブロックが複数なら、その中に 1 つずつ）
     run_dir = None if base_dir is not None else new_run_dir("", structure_stem(target_path))
@@ -3537,7 +3537,7 @@ def _main_cli(args_list: list[str]) -> int:
         else:
             bulk_dir = base_dir / f"output_{out_stem}"
 
-        print(f"[CrystalAnalyzerMCP] Running bulk analysis into {bulk_dir}...")
+        print(f"[Shido] Running bulk analysis into {bulk_dir}...")
         bulk_res = run_bulk_analysis(
             struct,
             bulk_dir,
@@ -3556,7 +3556,7 @@ def _main_cli(args_list: list[str]) -> int:
                 else base_dir / f"output_slab_{out_stem}_{h}{k}{l}"
             )
             print(
-                f"[CrystalAnalyzerMCP] Cutting ({h}{k}{l}) slabs into {slab_dir}..."
+                f"[Shido] Cutting ({h}{k}{l}) slabs into {slab_dir}..."
             )
             slab_res = cut_slabs(
                 struct,
@@ -3576,7 +3576,7 @@ def _main_cli(args_list: list[str]) -> int:
     if run_dir is not None:
         saved = _finish_run({}, run_dir, f"CIF の解析：{target_path.name}",
                             source=target_path.resolve(), settings=settings)
-    print("[CrystalAnalyzerMCP] Analysis completed successfully.")
+    print("[Shido] Analysis completed successfully.")
     _print_saved(saved)
     return 0
 

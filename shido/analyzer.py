@@ -29,7 +29,7 @@ from shido.core.validator import (
     validate_structure,
 )
 
-_logger = logging.getLogger("crystal_mcp")
+_logger = logging.getLogger("shido")
 
 # Suppress noisy pymatgen UserWarnings (e.g., CIF rounding / electronegativity fallbacks)
 warnings.filterwarnings("ignore", category=UserWarning, module=r"pymatgen(\..*)?")

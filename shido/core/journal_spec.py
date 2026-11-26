@@ -25,7 +25,7 @@ import yaml
 
 
 def journals_dir() -> Path:
-    """``crystal-mcp/journals`` (bundled next to the code when frozen)."""
+    """``<repo root>/journals`` (bundled next to the code when frozen)."""
     if getattr(sys, "frozen", False):
         return Path(getattr(sys, "_MEIPASS", Path(sys.executable).parent)) / "journals"
     return Path(__file__).resolve().parents[2] / "journals"

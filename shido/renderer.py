@@ -31,7 +31,7 @@ from shido.core.validator import (
 )
 from shido.theme_manager import ColorManager, get_color_manager, get_theme, resolve_structure_colors
 
-logger = logging.getLogger("crystal_mcp")
+logger = logging.getLogger("shido")
 
 # Above this many bonds the drawing is limited to nearest-neighbor pairs only.
 MAX_RENDER_BONDS: int = 2000

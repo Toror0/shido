@@ -240,7 +240,7 @@ def _print_check(chk: dict[str, Any]) -> None:
 def run_figure_cli(argv: list[str]) -> int:
     """`server.py figure --journal acta_materialia --width single --panels "bulk:iso,xrd" --cif X.cif`"""
     p = argparse.ArgumentParser(
-        prog="CrystalAnalyzerMCP figure",
+        prog="Shido figure",
         description="Journal-ready figure: panels at a journal column width, panel labels, format, check.",
     )
     p.add_argument("--journal", help="journal id or abbreviation (see --list), e.g. acta_materialia, prb, nature")
